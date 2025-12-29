@@ -18,7 +18,7 @@ jobs:
         with:
           go-version: "1.25.1"
 
-      - name: Run Tests
+      - name: Build prod binary
         run: ./scripts/buildprod.sh
 
       - id: auth
@@ -29,5 +29,5 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v3
 
-      - name: Use gcloud CLI
+      - name: Submit Image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/bootdev-notely-482716/notely-ar-repo/notely:latest .
