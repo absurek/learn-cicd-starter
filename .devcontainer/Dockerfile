@@ -24,4 +24,5 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 
 # GO CLIs
 RUN go install github.com/bootdotdev/bootdev@latest && \
+    go install honnef.co/go/tools/cmd/staticcheck@latest && \
     echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
